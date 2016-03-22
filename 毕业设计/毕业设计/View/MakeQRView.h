@@ -10,6 +10,15 @@
 
 @interface MakeQRView : UIView
 
+// 生成二维码并显示在superView上
 + (void)showQRCodeInView:(UIView *)superView withFrame:(CGRect)frame;
+
++ (void)removeQRCode;
+
+// 暂停计时
++ (void)stopTimer;
+
+// 继续计时
++ (void)resumeTimer;
 
 @end
