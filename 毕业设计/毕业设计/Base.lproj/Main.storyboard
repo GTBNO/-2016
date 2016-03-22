@@ -38,7 +38,7 @@
                     <view key="view" contentMode="scaleToFill" id="a5z-gb-zjk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.69795638989999997" green="0.10473019059999999" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kgz-QF-Im8"/>
                 </viewController>
@@ -57,7 +57,7 @@
                     <view key="view" contentMode="scaleToFill" id="aHY-uN-7G2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.12883951199999999" green="1" blue="0.8355485117" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oox-xq-sd9"/>
                 </viewController>
@@ -76,7 +76,7 @@
                     <view key="view" contentMode="scaleToFill" id="LjW-47-FVh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.18688536019999999" green="0.2672816912" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="THj-eU-qkV"/>
                 </viewController>
@@ -95,7 +95,8 @@
                     <view key="view" contentMode="scaleToFill" id="Bji-aM-AWg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="UL1-Ex-1JR"/>
                 </viewController>
@@ -114,13 +115,13 @@
                     <view key="view" contentMode="scaleToFill" id="36p-bt-Jrz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.105465741" blue="0.1662603144" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="IeG-GC-Moh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kma-Vm-5mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-657" y="-359"/>
+            <point key="canvasLocation" x="-792" y="-401"/>
         </scene>
         <!--有问必答-->
         <scene sceneID="yDM-IQ-i2e">
