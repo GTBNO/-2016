@@ -9,6 +9,7 @@
 
 #import "DataManager.h"
 
+
 @implementation DataManager
 
 
@@ -26,12 +27,14 @@
     return dataManager;
 }
 
-//学生注册方法
+//注册方法
 -(void)regist:(NSString *)userName code:(NSString *)code bingo:(Block)block
 {
     BmobUser *bUser = [[BmobUser alloc] init];
     [bUser setUserName:userName];
     [bUser setPassword:code];
+    [bUser setObject:self.job forKey:@"job"];
+    
     [bUser signUpInBackgroundWithBlock:^ (BOOL isSuccessful, NSError *error){
         if (isSuccessful){
             NSLog(@"Sign up successfully");

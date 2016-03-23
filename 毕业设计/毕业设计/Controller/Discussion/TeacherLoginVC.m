@@ -61,6 +61,8 @@
                 
                 [[DataManager sharedDataManager] creatTeacher:self.userName.text name:self.name.text];
             }];
+//            [self.navigationController popViewControllerAnimated:YES];
+
         }else
         {
             [self showAlert:@"两次密码不一致"];

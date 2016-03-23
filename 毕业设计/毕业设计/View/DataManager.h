@@ -13,6 +13,7 @@ typedef void(^RegistBlock)();
 @interface DataManager : NSObject
 
 @property (nonatomic,copy) RegistBlock registBlock;
+@property (nonatomic,strong) NSString *job; //判断是学生还是老师
 
 //初始化方法
 +(DataManager *)sharedDataManager;
