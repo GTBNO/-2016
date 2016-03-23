@@ -39,6 +39,10 @@
 		3FDEBAC71CA1682D00E31195 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDEBAC51CA1682D00E31195 /* LoginVC.m */; settings = {ASSET_TAGS = (); }; };
 		3FDEBAC81CA1682D00E31195 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDEBAC61CA1682D00E31195 /* LoginVC.xib */; settings = {ASSET_TAGS = (); }; };
 		3FDEBACA1CA1684600E31195 /* login.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3FDEBAC91CA1684600E31195 /* login.jpg */; settings = {ASSET_TAGS = (); }; };
+		3FDEBAD01CA17BB900E31195 /* LoginDVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDEBACE1CA17BB900E31195 /* LoginDVC.m */; settings = {ASSET_TAGS = (); }; };
+		3FDEBAD11CA17BB900E31195 /* LoginDVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDEBACF1CA17BB900E31195 /* LoginDVC.xib */; settings = {ASSET_TAGS = (); }; };
+		3FDEBAD51CA1808700E31195 /* TeacherLoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDEBAD31CA1808700E31195 /* TeacherLoginVC.m */; settings = {ASSET_TAGS = (); }; };
+		3FDEBAD61CA1808700E31195 /* TeacherLoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FDEBAD41CA1808700E31195 /* TeacherLoginVC.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,8 +72,8 @@
 		3FD4C1B01CA0391F005C9ADF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3FD4C1B21CA03932005C9ADF /* ChatVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChatVC.h; sourceTree = "<group>"; };
 		3FD4C1B31CA03932005C9ADF /* ChatVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChatVC.m; sourceTree = "<group>"; };
-		3FD4C1B41CA03932005C9ADF /* DiscussVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussVC.h; sourceTree = "<group>"; };
-		3FD4C1B51CA03932005C9ADF /* DiscussVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussVC.m; sourceTree = "<group>"; };
+		3FD4C1B41CA03932005C9ADF /* DiscussVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DiscussVC.h; path = "毕业设计/Controller/DiscussVC.h"; sourceTree = SOURCE_ROOT; };
+		3FD4C1B51CA03932005C9ADF /* DiscussVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DiscussVC.m; path = "毕业设计/Controller/DiscussVC.m"; sourceTree = SOURCE_ROOT; };
 		3FD4C1B61CA03932005C9ADF /* HomeWorkVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWorkVC.h; sourceTree = "<group>"; };
 		3FD4C1B71CA03932005C9ADF /* HomeWorkVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWorkVC.m; sourceTree = "<group>"; };
 		3FD4C1B81CA03932005C9ADF /* ScanVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanVC.h; sourceTree = "<group>"; };
@@ -104,10 +108,16 @@
 		3FDEBAB91CA14B3000E31195 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3FDEBABD1CA1639300E31195 /* DataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataManager.h; sourceTree = "<group>"; };
 		3FDEBABE1CA1639300E31195 /* DataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataManager.m; sourceTree = "<group>"; };
-		3FDEBAC41CA1682D00E31195 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
-		3FDEBAC51CA1682D00E31195 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
-		3FDEBAC61CA1682D00E31195 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		3FDEBAC41CA1682D00E31195 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginVC.h; path = ../LoginVC.h; sourceTree = "<group>"; };
+		3FDEBAC51CA1682D00E31195 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginVC.m; path = ../LoginVC.m; sourceTree = "<group>"; };
+		3FDEBAC61CA1682D00E31195 /* LoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = LoginVC.xib; path = ../LoginVC.xib; sourceTree = "<group>"; };
 		3FDEBAC91CA1684600E31195 /* login.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = login.jpg; sourceTree = "<group>"; };
+		3FDEBACD1CA17BB900E31195 /* LoginDVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDVC.h; sourceTree = "<group>"; };
+		3FDEBACE1CA17BB900E31195 /* LoginDVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginDVC.m; sourceTree = "<group>"; };
+		3FDEBACF1CA17BB900E31195 /* LoginDVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginDVC.xib; sourceTree = "<group>"; };
+		3FDEBAD21CA1808700E31195 /* TeacherLoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLoginVC.h; sourceTree = "<group>"; };
+		3FDEBAD31CA1808700E31195 /* TeacherLoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLoginVC.m; sourceTree = "<group>"; };
+		3FDEBAD41CA1808700E31195 /* TeacherLoginVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TeacherLoginVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -184,7 +194,6 @@
 		3FDD623F1CA0306A0022ABEA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3FDD62481CA0306A0022ABEA /* Main.storyboard */,
 				3FDD624B1CA0306A0022ABEA /* Assets.xcassets */,
 				3FDD624D1CA0306A0022ABEA /* LaunchScreen.storyboard */,
 				3FDD62501CA0306A0022ABEA /* Info.plist */,
@@ -234,11 +243,7 @@
 		3FDD62861CA033960022ABEA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				3FD4C1B41CA03932005C9ADF /* DiscussVC.h */,
-				3FD4C1B51CA03932005C9ADF /* DiscussVC.m */,
-				3FDEBAC41CA1682D00E31195 /* LoginVC.h */,
-				3FDEBAC51CA1682D00E31195 /* LoginVC.m */,
-				3FDEBAC61CA1682D00E31195 /* LoginVC.xib */,
+				3FDEBACC1CA17B9100E31195 /* Discuss */,
 				3FD4C1BA1CA03932005C9ADF /* SignVC.h */,
 				3FD4C1BB1CA03932005C9ADF /* SignVC.m */,
 				3FD4C1B81CA03932005C9ADF /* ScanVC.h */,
@@ -256,6 +261,7 @@
 		3FDD62871CA033BA0022ABEA /* APP */ = {
 			isa = PBXGroup;
 			children = (
+				3FDD62481CA0306A0022ABEA /* Main.storyboard */,
 				3FD4C1AF1CA0391F005C9ADF /* AppDelegate.h */,
 				3FD4C1B01CA0391F005C9ADF /* AppDelegate.m */,
 			);
@@ -288,6 +294,24 @@
 				3F73F6271CA1357B00A800AB /* 3.jpg */,
 			);
 			path = Pic;
+			sourceTree = "<group>";
+		};
+		3FDEBACC1CA17B9100E31195 /* Discuss */ = {
+			isa = PBXGroup;
+			children = (
+				3FD4C1B41CA03932005C9ADF /* DiscussVC.h */,
+				3FD4C1B51CA03932005C9ADF /* DiscussVC.m */,
+				3FDEBAC41CA1682D00E31195 /* LoginVC.h */,
+				3FDEBAC51CA1682D00E31195 /* LoginVC.m */,
+				3FDEBAC61CA1682D00E31195 /* LoginVC.xib */,
+				3FDEBACD1CA17BB900E31195 /* LoginDVC.h */,
+				3FDEBACE1CA17BB900E31195 /* LoginDVC.m */,
+				3FDEBACF1CA17BB900E31195 /* LoginDVC.xib */,
+				3FDEBAD21CA1808700E31195 /* TeacherLoginVC.h */,
+				3FDEBAD31CA1808700E31195 /* TeacherLoginVC.m */,
+				3FDEBAD41CA1808700E31195 /* TeacherLoginVC.xib */,
+			);
+			path = Discuss;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -394,7 +418,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FDEBAC81CA1682D00E31195 /* LoginVC.xib in Resources */,
+				3FDEBAD61CA1808700E31195 /* TeacherLoginVC.xib in Resources */,
 				3FDEBACA1CA1684600E31195 /* login.jpg in Resources */,
+				3FDEBAD11CA17BB900E31195 /* LoginDVC.xib in Resources */,
 				3FDD624F1CA0306A0022ABEA /* LaunchScreen.storyboard in Resources */,
 				3FDD624C1CA0306A0022ABEA /* Assets.xcassets in Resources */,
 				3FDD624A1CA0306A0022ABEA /* Main.storyboard in Resources */,
@@ -427,6 +453,7 @@
 				3FD4C1C01CA03932005C9ADF /* HomeWorkVC.m in Sources */,
 				3FDEBAC71CA1682D00E31195 /* LoginVC.m in Sources */,
 				3FD4C1BF1CA03932005C9ADF /* DiscussVC.m in Sources */,
+				3FDEBAD01CA17BB900E31195 /* LoginDVC.m in Sources */,
 				3FD4C1C21CA03932005C9ADF /* SignVC.m in Sources */,
 				3FD4C1C31CA03932005C9ADF /* TabViewController.m in Sources */,
 				3FD4C1C11CA03932005C9ADF /* ScanVC.m in Sources */,
@@ -435,6 +462,7 @@
 				3F73F6231CA1337A00A800AB /* HGDQQRCodeView.m in Sources */,
 				3FDEBABF1CA1639300E31195 /* DataManager.m in Sources */,
 				3FDD62411CA0306A0022ABEA /* main.m in Sources */,
+				3FDEBAD51CA1808700E31195 /* TeacherLoginVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +504,7 @@
 				3FDD62491CA0306A0022ABEA /* Base */,
 			);
 			name = Main.storyboard;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3FDD624D1CA0306A0022ABEA /* LaunchScreen.storyboard */ = {

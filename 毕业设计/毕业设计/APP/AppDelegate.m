@@ -50,7 +50,10 @@
 //        self.window.rootViewController = tabVC;
 //        ;
         LoginVC *loginVC = [[LoginVC alloc] init];
-        self.window.rootViewController = loginVC;
+
+        UINavigationController *navi = [[UINavigationController alloc] initWithRootViewController:loginVC];
+        loginVC.title = @"登录";
+               self.window.rootViewController = navi;
 
     }
     

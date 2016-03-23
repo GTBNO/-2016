@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginVC : UIViewController
+@property (weak, nonatomic) IBOutlet UITextField *userNameLabel;
+@property (weak, nonatomic) IBOutlet UITextField *codeLabel;
 
 @end
