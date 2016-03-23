@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import <BmobSDK/Bmob.h>
+#import "LoginVC.h"
+#import "TabViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -18,8 +22,40 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    
     _autorX = 375 / [UIScreen mainScreen].bounds.size.width;
     _autorY = 667 / [UIScreen mainScreen].bounds.size.height;
+    
+    
+    //Bmob的应用key
+   [Bmob registerWithAppKey:@"64036691de36b4430d2c624df931d1af"];
+    
+    
+//    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+//    [self.window makeKeyAndVisible];
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    
+//     //判断是否已登录
+//    if ([[[NSUserDefaults standardUserDefaults]objectForKey:@"isLog"] isEqualToString:@"YES"]) {
+//
+//        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+//                TabViewController *tabVC = [story instantiateInitialViewController];
+//                self.window.rootViewController = tabVC;
+//                ;
+////        LoginVC *loginVC = [[LoginVC alloc] init];
+////        self.window.rootViewController = loginVC;
+//
+//    }else
+//    {
+//        
+////        UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+////        TabViewController *tabVC = [story instantiateInitialViewController];
+////        self.window.rootViewController = tabVC;
+////        ;
+//        LoginVC *loginVC = [[LoginVC alloc] init];
+//        self.window.rootViewController = loginVC;
+//
+//    }
     
     return YES;
 }

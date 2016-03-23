@@ -25,7 +25,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iq9-Co-JWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2473" y="-433"/>
+            <point key="canvasLocation" x="-1799" y="-359"/>
         </scene>
         <!--Home WorkVC-->
         <scene sceneID="oPI-B6-bUe">
@@ -38,13 +38,13 @@
                     <view key="view" contentMode="scaleToFill" id="a5z-gb-zjk">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kgz-QF-Im8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2T-OT-7sW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2188" y="1234"/>
+            <point key="canvasLocation" x="-333" y="1574"/>
         </scene>
         <!--SignVC-->
         <scene sceneID="Y84-zy-TgO">
@@ -57,13 +57,13 @@
                     <view key="view" contentMode="scaleToFill" id="aHY-uN-7G2">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="Oox-xq-sd9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spH-nG-zQa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-776" y="57"/>
+            <point key="canvasLocation" x="67" y="259"/>
         </scene>
         <!--ChatVC-->
         <scene sceneID="Qgq-y8-mdA">
@@ -76,13 +76,13 @@
                     <view key="view" contentMode="scaleToFill" id="LjW-47-FVh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="THj-eU-qkV"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uh-LX-kID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2632" y="1220"/>
+            <point key="canvasLocation" x="-1019" y="892"/>
         </scene>
         <!--ScanVC-->
         <scene sceneID="3o8-A1-7n2">
@@ -95,13 +95,14 @@
                     <view key="view" contentMode="scaleToFill" id="Bji-aM-AWg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="UL1-Ex-1JR"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6bB-oE-x7o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1720" y="1234"/>
+            <point key="canvasLocation" x="187" y="939"/>
         </scene>
         <!--DiscussVC-->
         <scene sceneID="ZQ4-kI-N42">
@@ -114,13 +115,13 @@
                     <view key="view" contentMode="scaleToFill" id="36p-bt-Jrz">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" id="IeG-GC-Moh"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kma-Vm-5mL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1407" y="-804"/>
+            <point key="canvasLocation" x="-792" y="-401"/>
         </scene>
         <!--有问必答-->
         <scene sceneID="yDM-IQ-i2e">
@@ -139,7 +140,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hed-DT-OiO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1849" y="-787"/>
+            <point key="canvasLocation" x="-1189" y="-359"/>
         </scene>
         <!--考勤记录-->
         <scene sceneID="w85-l3-cFz">
@@ -158,7 +159,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vD6-lX-6rA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1307" y="-64"/>
+            <point key="canvasLocation" x="-783" y="341"/>
         </scene>
         <!--扫码-->
         <scene sceneID="VVY-vj-r2z">
@@ -177,7 +178,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVZ-jV-buv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1752" y="459"/>
+            <point key="canvasLocation" x="-345" y="939"/>
         </scene>
         <!--私信-->
         <scene sceneID="nuz-IV-3T0">
@@ -196,7 +197,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rRy-Nd-741" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2642" y="454"/>
+            <point key="canvasLocation" x="-1551" y="892"/>
         </scene>
         <!--作业-->
         <scene sceneID="DXd-7k-dAQ">
@@ -215,7 +216,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VWs-j3-2eg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2176" y="454"/>
+            <point key="canvasLocation" x="-1140" y="1589"/>
         </scene>
     </scenes>
 </document>
