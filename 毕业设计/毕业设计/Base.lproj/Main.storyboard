@@ -83,7 +83,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8uh-LX-kID" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1019" y="892"/>
+            <point key="canvasLocation" x="-1114" y="928"/>
         </scene>
         <!--ScanVC-->
         <scene sceneID="3o8-A1-7n2">
@@ -162,11 +162,11 @@
             </objects>
             <point key="canvasLocation" x="-783" y="341"/>
         </scene>
-        <!--扫码-->
+        <!--Navigation Controller-->
         <scene sceneID="VVY-vj-r2z">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7Qk-fn-n5h" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="扫码" id="yF3-0X-7IJ"/>
+                    <tabBarItem key="tabBarItem" title="" id="yF3-0X-7IJ"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Yf-1K-aCi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>

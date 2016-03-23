@@ -38,6 +38,7 @@
 @property(nonatomic,copy)NSString * className;
 
 
+
 /**
  *  权限控制里列表
  */

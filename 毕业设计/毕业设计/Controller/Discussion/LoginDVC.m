@@ -49,9 +49,10 @@
                 
                 [self showAlert:@"注册成功"];
                 [[DataManager sharedDataManager] creatStudent:self.className.text userName:self.userName.text code:self.code.text name:self.name.text];
-                
-            }];
+               
+                }];
             
+         
         }else
         {
             [self showAlert:@"两次密码不一致"];

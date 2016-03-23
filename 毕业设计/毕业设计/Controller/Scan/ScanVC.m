@@ -18,8 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
 
-     self.title = @"扫描";
+ 
     
 
 }

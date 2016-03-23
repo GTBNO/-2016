@@ -16,6 +16,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    //判断学生还是老师
+    NSString *job = [[NSUserDefaults standardUserDefaults] objectForKey:@"job"];
+    if ([job isEqualToString:@"学生"]) {
+      self.tabBar.items[2].title = @"扫描";
+    }else
+    {
+        self.tabBar.items[2].title = @"点名";
+    }
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

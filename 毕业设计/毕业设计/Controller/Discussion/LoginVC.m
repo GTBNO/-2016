@@ -12,6 +12,7 @@
 #import "AppDelegate.h"
 #import "TabViewController.h"
 #import <BmobSDK/Bmob.h>
+#import "DataManager.h"
 
 @interface LoginVC ()<UITextFieldDelegate>
 
@@ -41,14 +42,34 @@
     {
         [BmobUser loginWithUsernameInBackground:self.userNameLabel.text password:self.codeLabel.text block:^(BmobUser *user, NSError *error) {
             if (user) {
-                AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+                if ([[user objectForKey:@"job"] isEqualToString:@"YES"]) {
+                    [[NSUserDefaults standardUserDefaults] setObject:@"学生" forKey:@"job"];
+                    [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"isLog"];
+                    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+                    
+                    UIStoryboard * story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    TabViewController *tabVC = [story instantiateInitialViewController];
+                    
+                    delegate.window.rootViewController = tabVC;
+                    
+                }else
+                {
+                   [[NSUserDefaults standardUserDefaults] setObject:@"YES" forKey:@"isLog"];
+                     [[NSUserDefaults standardUserDefaults] setObject:@"老师" forKey:@"job"];
+                    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+                    
+                    UIStoryboard * story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                    TabViewController *tabVC = [story instantiateInitialViewController];
+                    
+                    delegate.window.rootViewController = tabVC;
+                    
+                }
+            
+   
+            
                 
-                UIStoryboard * story = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-                TabViewController *tabVC = [story instantiateInitialViewController];
-                
-                delegate.window.rootViewController = tabVC;
-            }else
-            {
+             }else{
+                 
                 NSLog(@"error");
                 [self showAlert:@"账号或密码错误"];
                 
@@ -62,13 +83,13 @@
    
     LoginDVC *logindvc = [[LoginDVC alloc] init];
     [self.navigationController pushViewController:logindvc animated:YES];
-    
+    [DataManager sharedDataManager].job = @"YES";
 }
 //老师注册方法
 - (IBAction)TeacherBtnAction:(id)sender {
     TeacherLoginVC *teacherVC = [[TeacherLoginVC alloc] init];
     [self.navigationController pushViewController:teacherVC animated:YES];
-    
+     [DataManager sharedDataManager].job = @"NO";
 }
 //回收键盘
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
