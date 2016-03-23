@@ -7,16 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <BmobSDK/Bmob.h>
+typedef void(^Block)();
+typedef void(^RegistBlock)();
 @interface DataManager : NSObject
 
-
+@property (nonatomic,copy) RegistBlock registBlock;
 
 //初始化方法
-+(void)sharedDataManager;
++(DataManager *)sharedDataManager;
 
-//添加数据的方法
-//-(
+//添加学生方法
+-(void)creatStudent:(NSString *)className userName:(NSString *)userName code:(NSString *)code name:(NSString *)name ;
 
+//添加老师的方法
+-(void)creatTeacher:(NSString *)userName  name:(NSString *)name;
+
+//注册方法
+-(void)regist:(NSString *)userName code:(NSString *)code bingo:(Block)block;
 
 @end

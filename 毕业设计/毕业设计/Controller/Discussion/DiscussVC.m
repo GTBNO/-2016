@@ -1,34 +1,28 @@
 //
-//  LoginVC.m
+//  DiscussVC.m
 //  毕业设计
 //
-//  Created by lanou on 16/3/22.
+//  Created by lanou on 16/3/21.
 //  Copyright © 2016年 SK. All rights reserved.
 //
 
-#import "LoginVC.h"
+#import "DiscussVC.h"
+#import <BmobSDK/Bmob.h>
+//#import <BmobSDK/BmobQuery.h>
 
-@interface LoginVC ()
+@interface DiscussVC ()
 
 @end
 
-@implementation LoginVC
+@implementation DiscussVC
 
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-}
-
-
-//登录方法
-- (IBAction)LoginBtnAction:(id)sender {
-}
-//学生注册方法
-- (IBAction)StudentBtnAction:(id)sender {
     
-}
-//老师注册方法
-- (IBAction)TeacherBtnAction:(id)sender {
+    self.title = @"有问必答";
+
+       
 }
 
 - (void)didReceiveMemoryWarning {
