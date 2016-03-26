@@ -7,6 +7,8 @@
 //
 
 #import "HomeWorkVC.h"
+#import "StudentHomeWorkView.h"
+#import "HomeWorkDetailVC.h"
 
 @interface HomeWorkVC ()
 
@@ -18,6 +20,25 @@
     [super viewDidLoad];
    
      self.title = @"作业";
+    self.view.backgroundColor = [UIColor lightGrayColor];
+    
+    CGRect rect = CGRectMake(20, 100, self.view.frame.size.width - 40, 80);
+    StudentHomeWorkView *view = [StudentHomeWorkView instanceWithFrame:&rect title:@"1111"];
+
+    // btn回调方法
+    view.btnHandleBlock = ^(NSString *title) {
+      
+        HomeWorkDetailVC *vc = [[HomeWorkDetailVC alloc]init];
+        vc.selectTitle = title;
+        
+        UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:vc];
+        
+        [self presentViewController:nav animated:YES completion:^{
+            
+        }];
+    };
+    
+    [self.view addSubview:view];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -29,19 +29,19 @@
     if ([self.name.text isEqualToString:@""]) {
         [self showAlert:@"姓名不能为空"];
         
-    }else if([self.userName.text isEqualToString:@""])
+    } else if([self.userName.text isEqualToString:@""])
     {
         [self showAlert:@"账号不能为空"];
-    }else if ([self.code.text isEqualToString:@""])
+    } else if ([self.code.text isEqualToString:@""])
     {
         [self showAlert:@"密码不能为空"];
-    }else if ([self.codeSecond.text isEqualToString:@""])
+    } else if ([self.codeSecond.text isEqualToString:@""])
     {
         [self showAlert:@"确认密码不能为空"];
-    }else if ([self.className.text isEqualToString:@""])
+    } else if ([self.className.text isEqualToString:@""])
     {
         [self showAlert:@"班级不能为空"];
-    }else
+    } else
     {
         if ([self.code.text isEqualToString:self.codeSecond.text]) {
             
