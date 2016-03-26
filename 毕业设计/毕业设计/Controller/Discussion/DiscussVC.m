@@ -59,29 +59,67 @@
     SDTimeLineRefreshHeader *_refreshHeader;
     CGFloat _lastScrollViewOffsetY;
 }
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//    
-//    if (!_refreshHeader.superview) {
-//        
-//        _refreshHeader = [SDTimeLineRefreshHeader refreshHeaderWithCenter:CGPointMake(40, 45)];
-//        _refreshHeader.scrollView = self.tableView;
-//        __weak typeof(_refreshHeader) weakHeader = _refreshHeader;
-//        __weak typeof(self) weakSelf = self;
-//        [_refreshHeader setRefreshingBlock:^{
-//            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-////                weakSelf.dataArray = [[weakSelf creatModelsWithCount:10] mutableCopy];
-////                weakSelf.dataArray = 
-//                [weakHeader endRefreshing];
-//                dispatch_async(dispatch_get_main_queue(), ^{
-//                    [weakSelf.tableView reloadData];
-//                });
-//            });
-//        }];
-//        [self.tableView.superview addSubview:_refreshHeader];
-//    }
-//}
+
+//下拉刷新
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    
+    if (!_refreshHeader.superview) {
+        
+        _refreshHeader = [SDTimeLineRefreshHeader refreshHeaderWithCenter:CGPointMake(40, 45)];
+        _refreshHeader.scrollView = self.tableView;
+        __weak typeof(_refreshHeader) weakHeader = _refreshHeader;
+        __weak typeof(self) weakSelf = self;
+       
+        [_refreshHeader setRefreshingBlock:^{
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                
+                //处理数据
+                [[DataManager sharedDataManager] refreshQuestion:^{
+                    
+                    NSArray *arr = @[@"bear.png"];
+                    [[DataManager sharedDataManager] refreshQuestion:^{
+                        for ( BmobObject *object in [DataManager sharedDataManager].refreshArray)
+                        {
+                            NSString *time = [weakSelf switchTime:object.createdAt];
+                            
+                            SDTimeLineCellModel *model = [SDTimeLineCellModel new];
+                            model.iconName = @"bear.png";
+                            model.time = time;
+                            model.name = [object objectForKey:@"name"];
+                            model.msgContent = [object objectForKey:@"question"];
+                            model.picNamesArray = arr;
+                            [weakSelf.timeArray insertObject:object.createdAt atIndex:0];
+                            
+                            
+                            [weakSelf.dataArray insertObject:model atIndex:0];
+                            
+                        }
+                        NSDate *date = weakSelf.timeArray[0];
+                        
+                        [[NSUserDefaults standardUserDefaults] setObject:date forKey:@"time"];
+                        
+                        dispatch_async(dispatch_get_main_queue(), ^{
+                            
+                            [weakSelf.tableView reloadData];
+                        });
+                        
+                        
+                    }];
+
+                    
+                }];
+                
+                [weakHeader endRefreshing];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [weakSelf.tableView reloadData];
+                });
+            });
+        }];
+        [self.tableView.superview addSubview:_refreshHeader];
+    }
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
  
