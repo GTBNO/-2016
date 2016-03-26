@@ -45,7 +45,7 @@
     {
         if ([self.code.text isEqualToString:self.codeSecond.text]) {
             
-            [[DataManager sharedDataManager] regist:self.userName.text code:self.code.text bingo:^{
+            [[DataManager sharedDataManager] regist:self.userName.text code:self.code.text class:self.className.text name:self.name.text bingo:^{
                 
                 [self showAlert:@"注册成功"];
                 [[DataManager sharedDataManager] creatStudent:self.className.text userName:self.userName.text code:self.code.text name:self.name.text];
