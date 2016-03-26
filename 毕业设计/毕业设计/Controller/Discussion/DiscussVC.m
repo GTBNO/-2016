@@ -19,10 +19,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
   
-    
     self.title = @"有问必答";
 
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"提问" style:UIBarButtonItemStyleDone target:self action:@selector(rightBarButtonAction:)];
        
+}
+
+- (void)rightBarButtonAction:(UIBarButtonItem *)barItem
+{
+    
 }
 
 - (void)didReceiveMemoryWarning {

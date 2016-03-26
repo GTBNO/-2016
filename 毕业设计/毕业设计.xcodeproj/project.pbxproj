@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F46A5BF1CA560AF0081834B /* StudentSignDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F46A5BD1CA560AF0081834B /* StudentSignDetailCell.m */; settings = {ASSET_TAGS = (); }; };
+		3F46A5C01CA560AF0081834B /* StudentSignDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F46A5BE1CA560AF0081834B /* StudentSignDetailCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3F46A5C51CA561060081834B /* StudentHomeWorkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F46A5C31CA561060081834B /* StudentHomeWorkView.m */; settings = {ASSET_TAGS = (); }; };
+		3F46A5C61CA561060081834B /* StudentHomeWorkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F46A5C41CA561060081834B /* StudentHomeWorkView.xib */; settings = {ASSET_TAGS = (); }; };
+		3F46A5C91CA5627F0081834B /* StudentListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F46A5C81CA5627F0081834B /* StudentListVC.m */; settings = {ASSET_TAGS = (); }; };
+		3F4AB2AA1CA3ED2C00EA6D56 /* SentMessageVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F4AB2A91CA3ED2C00EA6D56 /* SentMessageVC.m */; settings = {ASSET_TAGS = (); }; };
 		3F721FF01CA2B01B00A9C99D /* DiscussVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F721FE61CA2B01B00A9C99D /* DiscussVC.m */; settings = {ASSET_TAGS = (); }; };
 		3F721FF11CA2B01B00A9C99D /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F721FE81CA2B01B00A9C99D /* LoginVC.m */; settings = {ASSET_TAGS = (); }; };
 		3F721FF21CA2B01B00A9C99D /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F721FE91CA2B01B00A9C99D /* LoginVC.xib */; settings = {ASSET_TAGS = (); }; };
@@ -34,6 +40,8 @@
 		3F76F4CD1CA27CEA0007AD1C /* 扫描框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F76F4CC1CA27CEA0007AD1C /* 扫描框@2x.png */; settings = {ASSET_TAGS = (); }; };
 		3F76F4CF1CA283F40007AD1C /* erweima.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F76F4CE1CA283F40007AD1C /* erweima.png */; settings = {ASSET_TAGS = (); }; };
 		3F76F4D41CA28FBA0007AD1C /* ScanQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76F4D31CA28FBA0007AD1C /* ScanQRView.m */; settings = {ASSET_TAGS = (); }; };
+		3F8617481CA4D4E60006407B /* HomeWorkDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F8617471CA4D4E60006407B /* HomeWorkDetailVC.m */; settings = {ASSET_TAGS = (); }; };
+		3F9AB7A41CA533E900D0205C /* StudentSignDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F9AB7A31CA533E900D0205C /* StudentSignDetailVC.m */; settings = {ASSET_TAGS = (); }; };
 		3FD4C1B11CA0391F005C9ADF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4C1B01CA0391F005C9ADF /* AppDelegate.m */; settings = {ASSET_TAGS = (); }; };
 		3FD4C1C31CA03932005C9ADF /* TabViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD4C1BD1CA03932005C9ADF /* TabViewController.m */; settings = {ASSET_TAGS = (); }; };
 		3FDD62411CA0306A0022ABEA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FDD62401CA0306A0022ABEA /* main.m */; };
@@ -75,6 +83,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F46A5BC1CA560AF0081834B /* StudentSignDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentSignDetailCell.h; sourceTree = "<group>"; };
+		3F46A5BD1CA560AF0081834B /* StudentSignDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentSignDetailCell.m; sourceTree = "<group>"; };
+		3F46A5BE1CA560AF0081834B /* StudentSignDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentSignDetailCell.xib; sourceTree = "<group>"; };
+		3F46A5C21CA561060081834B /* StudentHomeWorkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentHomeWorkView.h; sourceTree = "<group>"; };
+		3F46A5C31CA561060081834B /* StudentHomeWorkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentHomeWorkView.m; sourceTree = "<group>"; };
+		3F46A5C41CA561060081834B /* StudentHomeWorkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentHomeWorkView.xib; sourceTree = "<group>"; };
+		3F46A5C71CA5627F0081834B /* StudentListVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentListVC.h; sourceTree = "<group>"; };
+		3F46A5C81CA5627F0081834B /* StudentListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentListVC.m; sourceTree = "<group>"; };
+		3F4AB2A81CA3ED2C00EA6D56 /* SentMessageVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SentMessageVC.h; sourceTree = "<group>"; };
+		3F4AB2A91CA3ED2C00EA6D56 /* SentMessageVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SentMessageVC.m; sourceTree = "<group>"; };
 		3F721FE51CA2B01B00A9C99D /* DiscussVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscussVC.h; sourceTree = "<group>"; };
 		3F721FE61CA2B01B00A9C99D /* DiscussVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DiscussVC.m; sourceTree = "<group>"; };
 		3F721FE71CA2B01B00A9C99D /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
@@ -135,6 +153,10 @@
 		3F76F4CE1CA283F40007AD1C /* erweima.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erweima.png; sourceTree = "<group>"; };
 		3F76F4D21CA28FBA0007AD1C /* ScanQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRView.h; sourceTree = "<group>"; };
 		3F76F4D31CA28FBA0007AD1C /* ScanQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRView.m; sourceTree = "<group>"; };
+		3F8617461CA4D4E60006407B /* HomeWorkDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWorkDetailVC.h; sourceTree = "<group>"; };
+		3F8617471CA4D4E60006407B /* HomeWorkDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWorkDetailVC.m; sourceTree = "<group>"; };
+		3F9AB7A21CA533E900D0205C /* StudentSignDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentSignDetailVC.h; sourceTree = "<group>"; };
+		3F9AB7A31CA533E900D0205C /* StudentSignDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentSignDetailVC.m; sourceTree = "<group>"; };
 		3FD4C1AF1CA0391F005C9ADF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3FD4C1B01CA0391F005C9ADF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3FD4C1BC1CA03932005C9ADF /* TabViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TabViewController.h; path = ../Controller/TabViewController.h; sourceTree = "<group>"; };
@@ -210,6 +232,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F46A5BA1CA55FDE0081834B /* SignView */ = {
+			isa = PBXGroup;
+			children = (
+				3F46A5BC1CA560AF0081834B /* StudentSignDetailCell.h */,
+				3F46A5BD1CA560AF0081834B /* StudentSignDetailCell.m */,
+				3F46A5BE1CA560AF0081834B /* StudentSignDetailCell.xib */,
+			);
+			path = SignView;
+			sourceTree = "<group>";
+		};
+		3F46A5C11CA560DB0081834B /* HomeWorkView */ = {
+			isa = PBXGroup;
+			children = (
+				3F46A5C21CA561060081834B /* StudentHomeWorkView.h */,
+				3F46A5C31CA561060081834B /* StudentHomeWorkView.m */,
+				3F46A5C41CA561060081834B /* StudentHomeWorkView.xib */,
+			);
+			path = HomeWorkView;
+			sourceTree = "<group>";
+		};
 		3F721FE41CA2AFD400A9C99D /* Discussion */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +284,10 @@
 			children = (
 				3F7220011CA2B22200A9C99D /* SignVC.h */,
 				3F7220021CA2B22200A9C99D /* SignVC.m */,
+				3F9AB7A21CA533E900D0205C /* StudentSignDetailVC.h */,
+				3F9AB7A31CA533E900D0205C /* StudentSignDetailVC.m */,
+				3F46A5C71CA5627F0081834B /* StudentListVC.h */,
+				3F46A5C81CA5627F0081834B /* StudentListVC.m */,
 			);
 			path = Sign;
 			sourceTree = "<group>";
@@ -251,6 +297,8 @@
 			children = (
 				3F7220041CA2B26600A9C99D /* HomeWorkVC.h */,
 				3F7220051CA2B26600A9C99D /* HomeWorkVC.m */,
+				3F8617461CA4D4E60006407B /* HomeWorkDetailVC.h */,
+				3F8617471CA4D4E60006407B /* HomeWorkDetailVC.m */,
 			);
 			path = HomeoWork;
 			sourceTree = "<group>";
@@ -260,6 +308,8 @@
 			children = (
 				3F7220071CA2B27F00A9C99D /* ChatVC.h */,
 				3F7220081CA2B27F00A9C99D /* ChatVC.m */,
+				3F4AB2A81CA3ED2C00EA6D56 /* SentMessageVC.h */,
+				3F4AB2A91CA3ED2C00EA6D56 /* SentMessageVC.m */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
@@ -390,6 +440,8 @@
 		3FDD62851CA033920022ABEA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F46A5C11CA560DB0081834B /* HomeWorkView */,
+				3F46A5BA1CA55FDE0081834B /* SignView */,
 				3F721FFB1CA2B0B800A9C99D /* DataManager.h */,
 				3F721FFC1CA2B0B800A9C99D /* DataManager.m */,
 				3F73F6211CA1337A00A800AB /* HGDQQRCodeView.h */,
@@ -564,11 +616,13 @@
 				3F76F4CF1CA283F40007AD1C /* erweima.png in Resources */,
 				3FDEBACA1CA1684600E31195 /* login.jpg in Resources */,
 				3FDD624F1CA0306A0022ABEA /* LaunchScreen.storyboard in Resources */,
+				3F46A5C01CA560AF0081834B /* StudentSignDetailCell.xib in Resources */,
 				3F721FF61CA2B01B00A9C99D /* TeacherLoginVC.xib in Resources */,
 				3FDD624C1CA0306A0022ABEA /* Assets.xcassets in Resources */,
 				3FDD624A1CA0306A0022ABEA /* Main.storyboard in Resources */,
 				3F73F6281CA1357B00A800AB /* 3.jpg in Resources */,
 				3F721FF21CA2B01B00A9C99D /* LoginVC.xib in Resources */,
+				3F46A5C61CA561060081834B /* StudentHomeWorkView.xib in Resources */,
 				3F76F4CB1CA27CE30007AD1C /* 扫描线@2x.png in Resources */,
 				3F76F4CD1CA27CEA0007AD1C /* 扫描框@2x.png in Resources */,
 				3F721FF41CA2B01B00A9C99D /* LoginDVC.xib in Resources */,
@@ -601,7 +655,13 @@
 				3F721FF01CA2B01B00A9C99D /* DiscussVC.m in Sources */,
 				3FD4C1C31CA03932005C9ADF /* TabViewController.m in Sources */,
 				3F7220031CA2B22200A9C99D /* SignVC.m in Sources */,
+				3F46A5C51CA561060081834B /* StudentHomeWorkView.m in Sources */,
+				3F46A5C91CA5627F0081834B /* StudentListVC.m in Sources */,
+				3F4AB2AA1CA3ED2C00EA6D56 /* SentMessageVC.m in Sources */,
 				3FD4C1B11CA0391F005C9ADF /* AppDelegate.m in Sources */,
+				3F8617481CA4D4E60006407B /* HomeWorkDetailVC.m in Sources */,
+				3F9AB7A41CA533E900D0205C /* StudentSignDetailVC.m in Sources */,
+				3F46A5BF1CA560AF0081834B /* StudentSignDetailCell.m in Sources */,
 				3F73F62D1CA17C0100A800AB /* RetunWeek.m in Sources */,
 				3F721FF51CA2B01B00A9C99D /* TeacherLoginVC.m in Sources */,
 				3F73F6261CA1342300A800AB /* MakeQRView.m in Sources */,
