@@ -198,8 +198,7 @@
             NSString *lastTime = [dateFormatter stringFromDate:date];
             NSLog(@"time==========%@",lastTime);
             NSDictionary *condiction1 = @{@"createdAt":@{@"$gt":@{@"__type": @"Date", @"iso": lastTime}}};
-            NSLog(@"%@",condiction1);
-            
+                        
             NSArray *condictonArray = @[condiction1];
             [bquery addTheConstraintByAndOperationWithArray:condictonArray];
             
