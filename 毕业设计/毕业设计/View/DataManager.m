@@ -190,14 +190,17 @@
         BmobQuery   *bquery = [BmobQuery queryWithClassName:[NSString stringWithFormat:@"%@Question",className]];
         if (self.dataArray.count != 0) {
 //
+            
+            NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"time"];
            
-            NSDate *currentDate = [NSDate date];
-            NSLog(@"%@",currentDate);
+//            NSDate *currentDate = [NSDate dateWithTimeIntervalSinceNow:-2];
+//            NSLog(@"%@",currentDate);
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-            NSString *lastTime = [dateFormatter stringFromDate:currentDate];
+            NSString *lastTime = [dateFormatter stringFromDate:date];
             NSLog(@"time==========%@",lastTime);
-            NSDictionary *condiction1 = @{@"createdAt":@{@"$gte":@{@"__type": @"Date", @"iso": lastTime}}};
+            NSDictionary *condiction1 = @{@"createdAt":@{@"$gt":@{@"__type": @"Date", @"iso": lastTime}}};
+            NSLog(@"%@",condiction1);
             
             NSArray *condictonArray = @[condiction1];
             [bquery addTheConstraintByAndOperationWithArray:condictonArray];
@@ -205,12 +208,22 @@
             [bquery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
                 
                 for (BmobObject *object in array) {
-                    NSLog(@"%@",[object objectForKey:@"question"]);
+//                    NSLog(@"%@",[object objectForKey:@"question"]);
+                   
+                    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+                    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+                    NSString *lastTime1 = [dateFormatter stringFromDate:object.createdAt];
+                    if ([lastTime1 isEqualToString:lastTime]) {
+                        
+                    }else{
+                        [self.refreshArray addObject:object];
+                    }
                     
                 }
-                NSLog(@"%ld",array.count);
-                [self.refreshArray addObjectsFromArray:array];
-                NSLog(@"%ld",self.refreshArray.count);
+              
+                
+          
+            
           
                 reBlock();
                 

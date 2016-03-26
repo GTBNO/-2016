@@ -89,8 +89,7 @@
 //    
     self.edgesForExtendedLayout = UIRectEdgeNone;
    
-  
-//   self switchTime:<#(NSDate *)#>
+
     
     self.title = @"有问必答";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"提问" style:UIBarButtonItemStylePlain target:self action:@selector(askQuesetion:)];
@@ -123,14 +122,17 @@
             model.picNamesArray = arr;
          
             
-            
            
            
             [self.dataArray addObject:model];
             
             
         }
-       
+        if (self.timeArray.count != 0) {
+            NSDate *date = self.timeArray[0];
+            [[NSUserDefaults standardUserDefaults] setObject:date forKey:@"time"];
+        }
+      
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.tableView reloadData];
         });
@@ -183,11 +185,14 @@
             model.msgContent = [object objectForKey:@"question"];
             model.picNamesArray = arr;
             [self.timeArray insertObject:object.createdAt atIndex:0];
+           
             
             [self.dataArray insertObject:model atIndex:0];
             
         }
+        NSDate *date = self.timeArray[0];
         
+        [[NSUserDefaults standardUserDefaults] setObject:date forKey:@"time"];
         
         dispatch_async(dispatch_get_main_queue(), ^{
           
