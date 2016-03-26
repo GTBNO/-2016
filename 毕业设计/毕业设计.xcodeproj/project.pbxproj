@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F005C831CA68A4800BD9CBF /* HomeWorkDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F005C821CA68A4800BD9CBF /* HomeWorkDetailVC.m */; settings = {ASSET_TAGS = (); }; };
+		3F005C881CA68A7700BD9CBF /* StudentHomeWorkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F005C861CA68A7700BD9CBF /* StudentHomeWorkView.m */; settings = {ASSET_TAGS = (); }; };
+		3F005C891CA68A7700BD9CBF /* StudentHomeWorkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F005C871CA68A7700BD9CBF /* StudentHomeWorkView.xib */; settings = {ASSET_TAGS = (); }; };
 		3F1C2A4D1CA3C77D002CC5D0 /* UITableView+SDAutoTableViewCellHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C2A4A1CA3C77D002CC5D0 /* UITableView+SDAutoTableViewCellHeight.m */; settings = {ASSET_TAGS = (); }; };
 		3F1C2A4E1CA3C77D002CC5D0 /* UIView+SDAutoLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C2A4C1CA3C77D002CC5D0 /* UIView+SDAutoLayout.m */; settings = {ASSET_TAGS = (); }; };
 		3F1C2A521CA3C968002CC5D0 /* SDTimeLineCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1C2A511CA3C968002CC5D0 /* SDTimeLineCell.m */; settings = {ASSET_TAGS = (); }; };
@@ -95,9 +98,6 @@
 		3F76F4CD1CA27CEA0007AD1C /* 扫描框@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F76F4CC1CA27CEA0007AD1C /* 扫描框@2x.png */; settings = {ASSET_TAGS = (); }; };
 		3F76F4CF1CA283F40007AD1C /* erweima.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F76F4CE1CA283F40007AD1C /* erweima.png */; settings = {ASSET_TAGS = (); }; };
 		3F76F4D41CA28FBA0007AD1C /* ScanQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F76F4D31CA28FBA0007AD1C /* ScanQRView.m */; settings = {ASSET_TAGS = (); }; };
-		3F7AA13C1CA66C5E0078002A /* HomeWorkDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA13B1CA66C5E0078002A /* HomeWorkDetailVC.m */; settings = {ASSET_TAGS = (); }; };
-		3F7AA1411CA66EFB0078002A /* StudentHomeWorkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA13F1CA66EFB0078002A /* StudentHomeWorkView.m */; settings = {ASSET_TAGS = (); }; };
-		3F7AA1421CA66EFB0078002A /* StudentHomeWorkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7AA1401CA66EFB0078002A /* StudentHomeWorkView.xib */; settings = {ASSET_TAGS = (); }; };
 		3F7AA1471CA66F030078002A /* StudentSignDetailCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA1451CA66F030078002A /* StudentSignDetailCell.m */; settings = {ASSET_TAGS = (); }; };
 		3F7AA1481CA66F030078002A /* StudentSignDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3F7AA1461CA66F030078002A /* StudentSignDetailCell.xib */; settings = {ASSET_TAGS = (); }; };
 		3F7AA14D1CA66F300078002A /* StudentListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F7AA14A1CA66F300078002A /* StudentListVC.m */; settings = {ASSET_TAGS = (); }; };
@@ -144,6 +144,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F005C811CA68A4800BD9CBF /* HomeWorkDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeWorkDetailVC.h; sourceTree = "<group>"; };
+		3F005C821CA68A4800BD9CBF /* HomeWorkDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeWorkDetailVC.m; sourceTree = "<group>"; };
+		3F005C851CA68A7700BD9CBF /* StudentHomeWorkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentHomeWorkView.h; sourceTree = "<group>"; };
+		3F005C861CA68A7700BD9CBF /* StudentHomeWorkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentHomeWorkView.m; sourceTree = "<group>"; };
+		3F005C871CA68A7700BD9CBF /* StudentHomeWorkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentHomeWorkView.xib; sourceTree = "<group>"; };
 		3F1C2A491CA3C77D002CC5D0 /* UITableView+SDAutoTableViewCellHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+SDAutoTableViewCellHeight.h"; sourceTree = "<group>"; };
 		3F1C2A4A1CA3C77D002CC5D0 /* UITableView+SDAutoTableViewCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+SDAutoTableViewCellHeight.m"; sourceTree = "<group>"; };
 		3F1C2A4B1CA3C77D002CC5D0 /* UIView+SDAutoLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+SDAutoLayout.h"; sourceTree = "<group>"; };
@@ -311,11 +316,6 @@
 		3F76F4CE1CA283F40007AD1C /* erweima.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = erweima.png; sourceTree = "<group>"; };
 		3F76F4D21CA28FBA0007AD1C /* ScanQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScanQRView.h; sourceTree = "<group>"; };
 		3F76F4D31CA28FBA0007AD1C /* ScanQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScanQRView.m; sourceTree = "<group>"; };
-		3F7AA13A1CA66C5E0078002A /* HomeWorkDetailVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HomeWorkDetailVC.h; path = "../../../../../毕业设计备份/毕业设计/毕业设计/Controller/HomeoWork/HomeWorkDetailVC.h"; sourceTree = "<group>"; };
-		3F7AA13B1CA66C5E0078002A /* HomeWorkDetailVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HomeWorkDetailVC.m; path = "../../../../../毕业设计备份/毕业设计/毕业设计/Controller/HomeoWork/HomeWorkDetailVC.m"; sourceTree = "<group>"; };
-		3F7AA13E1CA66EFB0078002A /* StudentHomeWorkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentHomeWorkView.h; sourceTree = "<group>"; };
-		3F7AA13F1CA66EFB0078002A /* StudentHomeWorkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentHomeWorkView.m; sourceTree = "<group>"; };
-		3F7AA1401CA66EFB0078002A /* StudentHomeWorkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentHomeWorkView.xib; sourceTree = "<group>"; };
 		3F7AA1441CA66F030078002A /* StudentSignDetailCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentSignDetailCell.h; sourceTree = "<group>"; };
 		3F7AA1451CA66F030078002A /* StudentSignDetailCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentSignDetailCell.m; sourceTree = "<group>"; };
 		3F7AA1461CA66F030078002A /* StudentSignDetailCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StudentSignDetailCell.xib; sourceTree = "<group>"; };
@@ -400,6 +400,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F005C841CA68A7700BD9CBF /* HomeWorkView */ = {
+			isa = PBXGroup;
+			children = (
+				3F005C851CA68A7700BD9CBF /* StudentHomeWorkView.h */,
+				3F005C861CA68A7700BD9CBF /* StudentHomeWorkView.m */,
+				3F005C871CA68A7700BD9CBF /* StudentHomeWorkView.xib */,
+			);
+			path = HomeWorkView;
+			sourceTree = "<group>";
+		};
 		3F1C2A481CA3C77D002CC5D0 /* SDAutoLayout */ = {
 			isa = PBXGroup;
 			children = (
@@ -678,8 +688,8 @@
 		3F721FF91CA2B06E00A9C99D /* HomeoWork */ = {
 			isa = PBXGroup;
 			children = (
-				3F7AA13A1CA66C5E0078002A /* HomeWorkDetailVC.h */,
-				3F7AA13B1CA66C5E0078002A /* HomeWorkDetailVC.m */,
+				3F005C811CA68A4800BD9CBF /* HomeWorkDetailVC.h */,
+				3F005C821CA68A4800BD9CBF /* HomeWorkDetailVC.m */,
 				3F7220041CA2B26600A9C99D /* HomeWorkVC.h */,
 				3F7220051CA2B26600A9C99D /* HomeWorkVC.m */,
 			);
@@ -744,17 +754,6 @@
 				3F73F9561CA18DBF00A800AB /* Window.h */,
 			);
 			path = zbar;
-			sourceTree = "<group>";
-		};
-		3F7AA13D1CA66EFB0078002A /* HomeWorkView */ = {
-			isa = PBXGroup;
-			children = (
-				3F7AA13E1CA66EFB0078002A /* StudentHomeWorkView.h */,
-				3F7AA13F1CA66EFB0078002A /* StudentHomeWorkView.m */,
-				3F7AA1401CA66EFB0078002A /* StudentHomeWorkView.xib */,
-			);
-			name = HomeWorkView;
-			path = "../../../../毕业设计备份/毕业设计/毕业设计/View/HomeWorkView";
 			sourceTree = "<group>";
 		};
 		3F7AA1431CA66F030078002A /* SignView */ = {
@@ -848,8 +847,8 @@
 		3FDD62851CA033920022ABEA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F005C841CA68A7700BD9CBF /* HomeWorkView */,
 				3F7AA1431CA66F030078002A /* SignView */,
-				3F7AA13D1CA66EFB0078002A /* HomeWorkView */,
 				3F721FFB1CA2B0B800A9C99D /* DataManager.h */,
 				3F721FFC1CA2B0B800A9C99D /* DataManager.m */,
 				3F73F6211CA1337A00A800AB /* HGDQQRCodeView.h */,
@@ -1055,8 +1054,8 @@
 				3F721FF21CA2B01B00A9C99D /* LoginVC.xib in Resources */,
 				3F76F4CB1CA27CE30007AD1C /* 扫描线@2x.png in Resources */,
 				3F1C2AEA1CA3DCD6002CC5D0 /* icon0.jpg in Resources */,
+				3F005C891CA68A7700BD9CBF /* StudentHomeWorkView.xib in Resources */,
 				3F76F4CD1CA27CEA0007AD1C /* 扫描框@2x.png in Resources */,
-				3F7AA1421CA66EFB0078002A /* StudentHomeWorkView.xib in Resources */,
 				3F1C2ACF1CA3D17E002CC5D0 /* MLEmoji_Expression.bundle in Resources */,
 				3F1C2AEF1CA3DCD6002CC5D0 /* pic0.jpg in Resources */,
 				3F1C2AF21CA3DCD6002CC5D0 /* pic3.jpg in Resources */,
@@ -1098,7 +1097,6 @@
 				3F1C2AA71CA3D166002CC5D0 /* UIImageView+HighlightedWebCache.m in Sources */,
 				3F1C2A751CA3D156002CC5D0 /* SDBrowserImageView.m in Sources */,
 				3F1C2A771CA3D156002CC5D0 /* SDWaitingView.m in Sources */,
-				3F7AA13C1CA66C5E0078002A /* HomeWorkDetailVC.m in Sources */,
 				3F721FF01CA2B01B00A9C99D /* DiscussVC.m in Sources */,
 				3F1C2AA61CA3D166002CC5D0 /* UIImage+WebP.m in Sources */,
 				3F1C2AD61CA3D17E002CC5D0 /* MLExpressionManager.m in Sources */,
@@ -1110,7 +1108,6 @@
 				3FD4C1C31CA03932005C9ADF /* TabViewController.m in Sources */,
 				3F7AA1511CA66FB30078002A /* SentMessageVC.m in Sources */,
 				3F7AA14E1CA66F300078002A /* StudentSignDetailVC.m in Sources */,
-				3F7AA1411CA66EFB0078002A /* StudentHomeWorkView.m in Sources */,
 				3F7220031CA2B22200A9C99D /* SignVC.m in Sources */,
 				3F1C2A9D1CA3D166002CC5D0 /* SDWebImageCompat.m in Sources */,
 				3F1C2ADC1CA3D17E002CC5D0 /* MLLinkLabel.m in Sources */,
@@ -1139,11 +1136,13 @@
 				3F1C2A5A1CA3C9DE002CC5D0 /* SDTimeLineRefreshHeader.m in Sources */,
 				3F1C2A9F1CA3D166002CC5D0 /* SDWebImageDownloader.m in Sources */,
 				3F7220061CA2B26600A9C99D /* HomeWorkVC.m in Sources */,
+				3F005C831CA68A4800BD9CBF /* HomeWorkDetailVC.m in Sources */,
 				3F1C2A9B1CA3D166002CC5D0 /* NSData+ImageContentType.m in Sources */,
 				3F7AA1471CA66F030078002A /* StudentSignDetailCell.m in Sources */,
 				3F1C2AD91CA3D17E002CC5D0 /* NSString+MLExpression.m in Sources */,
 				3F1C2ADF1CA3D17E002CC5D0 /* TTTAttributedLabel.m in Sources */,
 				3F7220091CA2B27F00A9C99D /* ChatVC.m in Sources */,
+				3F005C881CA68A7700BD9CBF /* StudentHomeWorkView.m in Sources */,
 				3F1C2A621CA3D0B4002CC5D0 /* SDTimeLineCellModel.m in Sources */,
 				3F721FFD1CA2B0B800A9C99D /* DataManager.m in Sources */,
 				3F1C2AD31CA3D17E002CC5D0 /* NSAttributedString+MLLabel.m in Sources */,
