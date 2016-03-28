@@ -54,6 +54,7 @@ typedef void(^CommentBlock)();
 //删除评论的方法
 -(void)deleteComment:(NSInteger)which;
 
-//刷新新的评论的方法
--(void)refreshComment;
+//返回当前班和老师
+-(NSMutableArray *)returnAllUser;
+
 @end

@@ -402,92 +402,46 @@
     
 }
 
-//刷新新的评论的方法
--(void)refreshComment
+//返回当前班的所有学生
+-(NSMutableArray *)returnAllUser
 {
-    
-//    //查找新的评论然后加进数组
-//    
-//    //1记录最后一条的时间
-//    BmobObject *timeObject = self.commentArray[self.commentArray.count - 1];
-//    NSDate *date =  timeObject.createdAt;
-//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-//    [formatter setDateFormat:@"yy-MM-dd HH:mm:ss"];
-//    NSString *time = [formatter stringFromDate:date];
-//    
-//    NSDictionary *condiction1 = @{@"createdAt":@{@"$gt":@{@"__type": @"Date", @"iso":time}}};
-//    
-//    NSArray *condictonArray = @[condiction1];
-//    
-//    //创建查找
-//    BmobQuery *query = [BmobQuery queryWithClassName:@"Answer"];
-//    [query addTheConstraintByAndOperationWithArray:condictonArray];
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
-//        if (error) {
-//            NSLog(@"%@",error);
-//        } else if (array){
-//            
-//            for (BmobObject *object in array) {
-//                
-//                NSLog(@"%@",[object objectForKey:@"answer"]);
-//                
-//            }
-//            
-//       
-//        }
-//    }];
-
     BmobUser *user = [BmobUser getCurrentUser];
-    if (user) {
-        
-        NSInteger number =[[NSUserDefaults standardUserDefaults] integerForKey:@"answer"];
-        BmobObject *object = self.dataArray[number];
-        
-        
-        
-        BmobQuery *inQuery = [BmobQuery queryWithClassName:@"Answer"];
-        NSString *class = [user objectForKey:@"className"];
-        NSString *className = [NSString stringWithFormat:@"%@Question",class];
-        
-        BmobQuery *bquery = [BmobQuery queryWithClassName:className];
-        
-        //要得到哪条问题
-        BmobObject *timeObject = self.commentArray[self.commentArray.count - 1];
-            NSDate *date =  timeObject.createdAt;
-            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-            [formatter setDateFormat:@"yy-MM-dd HH:mm:ss"];
-            NSString *time = [formatter stringFromDate:date];
-        NSLog(@"%@",time);
-            NSDictionary *condiction1 = @{@"createdAt":@{@"$gt":@{@"__type": @"Date", @"iso":time}}};
-        
-        
-            NSArray *condictonArray = @[condiction1];
-        [bquery addTheConstraintByAndOperationWithArray:condictonArray];
-        
-        [bquery whereKey:@"question" equalTo:[object objectForKey:@"question"]];
-        [inQuery whereKey:@"question" matchesQuery:bquery];
-        [inQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+    
+        NSString *className = [user objectForKey:@"className"];
+        BmobQuery *query = [BmobQuery queryWithClassName:className];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
             if (error) {
                 NSLog(@"%@",error);
             } else if (array){
+                [mutableArray addObjectsFromArray:array];
+             
                 
-                NSLog(@"suceessful");
-                for (BmobObject *object in array) {
-                    
-                    [self.commentArray addObject:object];
-                    NSLog(@"object");
-                }
-                
-              
+               
             }
         }];
-        
-        
-    }
-
     
+    BmobQuery *query1 = [BmobQuery queryWithClassName:@"Teacher"];
+    
+    [query1 findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+        if (error) {
+            NSLog(@"%@",error);
+        } else if (array){
+            
+            for (BmobObject *object in array) {
+                [mutableArray addObject:object];
+            }
+            
+            
+        }
+    }];
+
+
+    return mutableArray;
+    
+ 
 }
+
 
 -(NSMutableArray *)commentArray
 {
