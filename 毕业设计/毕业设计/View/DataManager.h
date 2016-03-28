@@ -12,12 +12,14 @@ typedef void(^Block)();
 typedef void(^RegistBlock)();
 typedef void(^ModelBlock)();
 typedef void(^ReBlock)();
+typedef void(^CommentBlock)();
 @interface DataManager : NSObject
 
 @property (nonatomic,copy) RegistBlock registBlock;
 @property (nonatomic,strong) NSString *job; //判断是学生还是老师
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,strong) NSMutableArray *refreshArray;
+@property (nonatomic,strong) NSMutableArray *commentArray;
 
 //初始化方法
 +(DataManager *)sharedDataManager;
@@ -37,9 +39,18 @@ typedef void(^ReBlock)();
 //查找问题的方法
 -(void)findQuestion:(ModelBlock)modelBlock;
 
-//回复的方法
-//-(void)commentQuestion;
-
 //刷新新的问题方法
 -(void)refreshQuestion:(ReBlock)reBlock;
+
+//回复的方法
+-(void)commentQuestion:(NSString *)answer;
+
+//回复某个人的方法
+-(void)commentSomeone:(NSString*)answer commentee:(NSString *)commentee;
+
+//得到一个问题的全部评论
+-(void)getAllAnswer:(CommentBlock)commentBlock;
+
+//删除评论的方法
+-(void)deleteComment:(NSInteger)which;
 @end

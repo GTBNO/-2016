@@ -24,10 +24,14 @@
     
     if ( [self.which isEqualToString:@"ask"]) {
         self.title =@"问题";
+    }else if ([self.which isEqualToString:@"comment"])
+    {
+        self.title  = @"回复";
     }else
     {
-        self.title = @"回复";
+       self.title = @"回复";
     }
+    
     
 
 }
@@ -54,13 +58,17 @@
         [[DataManager sharedDataManager] questionWith:self.textView.text];
         
         [self.navigationController popViewControllerAnimated:YES];
-        
-        
-        
-
+    }else if([self.which isEqualToString:@"comment"])
+    {
+        [[DataManager sharedDataManager] commentQuestion:self.textView.text];
+        [self.navigationController popViewControllerAnimated:YES];
     }else
     {
-        NSLog(@"评论");
+        NSInteger row = [[NSUserDefaults standardUserDefaults] integerForKey:@"row"];
+       BmobObject *object = [DataManager sharedDataManager].commentArray[row];
+        
+        [[DataManager sharedDataManager] commentSomeone:self.textView.text commentee:[object objectForKey:@"commenter"]];
+        [self.navigationController popViewControllerAnimated:YES];
     }
     
     

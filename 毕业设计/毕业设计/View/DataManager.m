@@ -10,6 +10,9 @@
 #import "DataManager.h"
 
 
+
+
+
 @implementation DataManager
 
 
@@ -115,6 +118,9 @@
         [bmobObject setObject:name forKey:@"name"];
         [bmobObject setObject:className forKey:@"className"];
         
+      
+        
+      
         
         //异步保存到服务器
         [bmobObject saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
@@ -187,18 +193,16 @@
        NSString *className =  [bUser objectForKey:@"className"];
         BmobQuery   *bquery = [BmobQuery queryWithClassName:[NSString stringWithFormat:@"%@Question",className]];
         if (self.dataArray.count != 0) {
-//
+
             
             NSDate *date = [[NSUserDefaults standardUserDefaults] objectForKey:@"time"];
            
-//            NSDate *currentDate = [NSDate dateWithTimeIntervalSinceNow:-2];
-//            NSLog(@"%@",currentDate);
             NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
             [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
             NSString *lastTime = [dateFormatter stringFromDate:date];
             NSLog(@"time==========%@",lastTime);
             NSDictionary *condiction1 = @{@"createdAt":@{@"$gt":@{@"__type": @"Date", @"iso": lastTime}}};
-                        
+            
             NSArray *condictonArray = @[condiction1];
             [bquery addTheConstraintByAndOperationWithArray:condictonArray];
             
@@ -214,15 +218,11 @@
                         
                     }else{
                         [self.refreshArray addObject:object];
+                        [self.dataArray addObject:object];
                     }
                     
                 }
-              
-                
-          
-            
-          
-                reBlock();
+                        reBlock();
                 
             }];
 
@@ -249,6 +249,153 @@
     
     
 }
+
+//评论的方法
+-(void)commentQuestion:(NSString *)answer
+{
+   
+    BmobUser *user = [BmobUser getCurrentUser];
+    if (user) {
+        //    拿到评论的问题的对象
+        NSInteger number =[[NSUserDefaults standardUserDefaults] integerForKey:@"answer"];
+        BmobObject *object = self.dataArray[number];
+        
+        
+        BmobObject *answerObject = [BmobObject objectWithClassName:@"Answer"];
+        
+        [answerObject setObject:answer forKey:@"answer"];
+        [answerObject  setObject:[user objectForKey:@"name"] forKey:@"commenter"];
+        [answerObject setObject:[object objectForKey:@"name"] forKey:@"commentee"];
+        //构造关系
+        BmobRelation *relation = [[BmobRelation alloc] init];
+        [relation addObject:object];
+        [answerObject addRelation:relation forKey:@"question"];
+        
+        
+        [answerObject saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+            if (isSuccessful) {
+                //创建成功后会返回objectId，updatedAt，createdAt等信息
+                //创建对象成功，打印对象值
+      
+                NSLog(@"保存成功");
+            } else if (error){
+                //发生错误后的动作
+                NSLog(@"%@",error);
+            } else {
+                NSLog(@"Unknow error");
+            }
+        }];
+
+    }
+    
+
+    
+
+}
+
+
+-(void)getAllAnswer:(CommentBlock)commentBlock
+{
+    
+    [self.commentArray removeAllObjects];
+    BmobUser *user = [BmobUser getCurrentUser];
+    if (user) {
+        
+        NSInteger number =[[NSUserDefaults standardUserDefaults] integerForKey:@"answer"];
+        BmobObject *object = self.dataArray[number];
+
+    
+        
+          BmobQuery *inQuery = [BmobQuery queryWithClassName:@"Answer"];
+        NSString *class = [user objectForKey:@"className"];
+        NSString *className = [NSString stringWithFormat:@"%@Question",class];
+        
+        BmobQuery *bquery = [BmobQuery queryWithClassName:className];
+        
+        //要得到哪条问题
+        
+        [bquery whereKey:@"question" equalTo:[object objectForKey:@"question"]];
+        [inQuery whereKey:@"question" matchesQuery:bquery];
+        [inQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            if (error) {
+                NSLog(@"%@",error);
+            } else if (array){
+            
+          for (BmobObject *object in array) {
+                   
+                    [self.commentArray addObject:object];
+              NSLog(@"%@",object);
+           }
+                
+                commentBlock();
+            }
+        }];
+        
+        
+    }
+}
+
+//回复某个人的方法
+-(void)commentSomeone:(NSString *)answer commentee:(NSString *)commentee
+{
+    //同样要加关联的
+    BmobUser *user = [BmobUser getCurrentUser];
+    if (user) {
+        BmobObject *object = [BmobObject objectWithClassName:@"Answer"];
+        [object setObject:[user objectForKey:@"name"] forKey:@"commenter"];
+        [object setObject:commentee forKey:@"commentee"];
+        BmobRelation *relation = [[BmobRelation alloc] init];
+        [relation addObject:object];
+        [object addRelation:relation forKey:@"question"];
+        
+        
+        [object saveInBackgroundWithResultBlock:^(BOOL isSuccessful, NSError *error) {
+            if (isSuccessful) {
+                //创建成功后会返回objectId，updatedAt，createdAt等信息
+                //创建对象成功，打印对象值
+                
+                
+                NSLog(@"保存成功");
+            } else if (error){
+                //发生错误后的动作
+                NSLog(@"%@",error);
+            } else {
+                NSLog(@"Unknow error");
+            }
+        }];
+
+        
+        
+    }
+}
+//删除评论的方法
+-(void)deleteComment:(NSInteger)which
+{
+   
+      BmobObject *object =  self.commentArray[which];
+    [object deleteInBackgroundWithBlock:^(BOOL isSuccessful, NSError *error) {
+        if (isSuccessful) {
+            //删除成功后的动作
+            NSLog(@"successful");
+        } else if (error){
+            NSLog(@"%@",error);
+        } else {
+            NSLog(@"UnKnow error");
+        }
+    }];
+    
+    
+}
+
+
+-(NSMutableArray *)commentArray
+{
+    if (_commentArray == nil) {
+        _commentArray = [[NSMutableArray alloc] init];
+    }
+    return  _commentArray;
+}
+
 -(NSMutableArray *)refreshArray
 {
     if (_refreshArray == nil) {

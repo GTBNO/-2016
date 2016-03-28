@@ -8,7 +8,7 @@
 
 #import "DiscussVC.h"
 #import <BmobSDK/Bmob.h>
-//#import <BmobSDK/BmobQuery.h>
+
 #import "AppDelegate.h"
 #import "AskVC.h"
 #import "DataManager.h"
@@ -20,6 +20,7 @@
 #import "UITableView+SDAutoTableViewCellHeight.h"
 #import "UIView+SDAutoLayout.h"
 #import "AskVC.h"
+#import "AnswerVC.h"
 
 @interface DiscussVC () <UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITableViewDelegate,UITableViewDataSource,BmobEventDelegate>
 @property (nonatomic,strong) UIControl *control;
@@ -78,7 +79,7 @@
                 //处理数据
                 [[DataManager sharedDataManager] refreshQuestion:^{
                     
-                    NSArray *arr = @[@"bear.png"];
+                    NSArray *arr = @[@"bear.png",@"bear.png",@"bear.png"];
                     [[DataManager sharedDataManager] refreshQuestion:^{
                         for ( BmobObject *object in [DataManager sharedDataManager].refreshArray)
                         {
@@ -127,7 +128,7 @@
 //    
     self.edgesForExtendedLayout = UIRectEdgeNone;
    
-
+ 
     
     self.title = @"有问必答";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"提问" style:UIBarButtonItemStylePlain target:self action:@selector(askQuesetion:)];
@@ -143,7 +144,7 @@
     self.backView.hidden = YES;
     [self.backView addGestureRecognizer:tap];
 //    
-    NSArray *arr = @[@"bear.png"];
+    NSArray *arr = @[@"bear.png",@"bear.png",@"bear.png"];
 
     [[DataManager sharedDataManager] findQuestion:^{
        
@@ -205,12 +206,14 @@
     [timer fire];
     
     
+  
+    
 }
 
 //收到通知执行的方法
 -(void)notification:(NSNotification *)notification
 {
-    NSArray *arr = @[@"bear.png"];
+    NSArray *arr = @[@"bear.png",@"bear.png",@"bear.png"];
     [[DataManager sharedDataManager] refreshQuestion:^{
         for ( BmobObject *object in [DataManager sharedDataManager].refreshArray)
         {
@@ -241,10 +244,7 @@
     }];
     
 }
--(void)viewWillAppear:(BOOL)animated
-{
-    
-}
+
 
 //计时器的方法
 -(void)refreshTime
@@ -283,33 +283,7 @@
     
 }
 
-//
-//-(void)listenTableChange:(BmobActionType)actionType tableName:(NSString *)tableName
-//{
-//    
-//}
-//-(void)listen{
-//    //创建BmobEvent对象
-//    self.bmobEvent = [BmobEvent defaultBmobEvent];
-//    //设置代理
-//    self.bmobEvent.delegate = self;
-//    //启动连接
-//    [self.bmobEvent start];
-//}
-//
-//
-////可以进行监听或者取消监听事件
-//-(void)bmobEventCanStartListen:(BmobEvent *)event{
-//    //监听Post表更新
-//    [_bmobEvent listenTableChange:BmobActionTypeUpdateTable tableName:@"lanou08Question"];
-//}
-////接收到得数据
-//-(void)bmobEvent:(BmobEvent *)event didReceiveMessage:(NSString *)message{
-////    打印数据
-//    NSLog(@"didReceiveMessage:%@",message);
-//    NSLog(@"表更新了");
-//}
-////
+
 
 -(NSMutableArray *)dataArray{
     if (_dataArray == nil) {
@@ -322,6 +296,7 @@
 {
     return self.dataArray.count;
 }
+//cell的数据
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
 
@@ -329,16 +304,16 @@
     if (cell == nil) {
         cell = [[SDTimeLineCell alloc] initWithStyle: UITableViewCellStyleDefault reuseIdentifier:@"reuse"];
     }
-    cell.timeLabel.text = @"一分钟前";
-    cell.indexPath = indexPath;
-    __weak typeof(self) weakSelf = self;
-    if (!cell.moreButtonClickedBlock) {
-        [cell setMoreButtonClickedBlock:^(NSIndexPath *indexPath) {
-            SDTimeLineCellModel *model = weakSelf.dataArray[indexPath.row];
-            model.isOpening = !model.isOpening;
-            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        }];
-    }
+
+//    cell.indexPath = indexPath;
+//    __weak typeof(self) weakSelf = self;
+//    if (!cell.moreButtonClickedBlock) {
+//        [cell setMoreButtonClickedBlock:^(NSIndexPath *indexPath) {
+//            SDTimeLineCellModel *model = weakSelf.dataArray[indexPath.row];
+//            model.isOpening = !model.isOpening;
+//            [weakSelf.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+//        }];
+//    }
     
     ////// 此步设置用于实现cell的frame缓存，可以让tableview滑动更加流畅 //////
     
@@ -347,8 +322,13 @@
     
     ///////////////////////////////////////////////////////////////////////
     cell.block = ^(){
-        AskVC *asdVC = [[AskVC alloc] init];
-        [self.navigationController pushViewController:asdVC animated:YES];
+        
+        [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"answer"];
+        [[NSUserDefaults standardUserDefaults] setObject:@"comment" forKey:@"which"];
+        
+        AskVC *askVC = [[AskVC alloc] init];
+        [self.navigationController pushViewController:askVC animated:YES];
+    
         
     };
     
@@ -361,7 +341,21 @@
 //cell的点击方法
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   
+    
+    
+    [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"answer"];
+    AnswerVC *answerVC = [[AnswerVC alloc] init];
+    
+    //要传一个Model过去
+    answerVC.model = self.dataArray[indexPath.row];
+  
+    [self.navigationController pushViewController:answerVC animated:YES];
+    
+    
+    
+    
+    
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath

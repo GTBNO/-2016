@@ -124,6 +124,12 @@
 		3FE562DF1CA68A83008DAE69 /* HomeWorkDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE562DE1CA68A83008DAE69 /* HomeWorkDetailVC.m */; settings = {ASSET_TAGS = (); }; };
 		3FE562E31CA68AC9008DAE69 /* StudentHomeWorkView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE562E11CA68AC9008DAE69 /* StudentHomeWorkView.m */; settings = {ASSET_TAGS = (); }; };
 		3FE562E41CA68AC9008DAE69 /* StudentHomeWorkView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE562E21CA68AC9008DAE69 /* StudentHomeWorkView.xib */; settings = {ASSET_TAGS = (); }; };
+		3FE562EC1CA7D2E9008DAE69 /* AnswerVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE562EB1CA7D2E9008DAE69 /* AnswerVC.m */; settings = {ASSET_TAGS = (); }; };
+		3FE563291CA8D195008DAE69 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE563271CA8D195008DAE69 /* CommentCell.m */; settings = {ASSET_TAGS = (); }; };
+		3FE5632A1CA8D195008DAE69 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE563281CA8D195008DAE69 /* CommentCell.xib */; settings = {ASSET_TAGS = (); }; };
+		3FE5632D1CA8D4D1008DAE69 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE5632C1CA8D4D1008DAE69 /* Comment.m */; settings = {ASSET_TAGS = (); }; };
+		3FE563341CA8E3BD008DAE69 /* SoloCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE563321CA8E3BD008DAE69 /* SoloCell.m */; settings = {ASSET_TAGS = (); }; };
+		3FE563351CA8E3BD008DAE69 /* SoloCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3FE563331CA8E3BD008DAE69 /* SoloCell.xib */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -354,6 +360,16 @@
 		3FE562E01CA68AC9008DAE69 /* StudentHomeWorkView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StudentHomeWorkView.h; path = "毕业设计/View/HomeWorkView/StudentHomeWorkView.h"; sourceTree = SOURCE_ROOT; };
 		3FE562E11CA68AC9008DAE69 /* StudentHomeWorkView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StudentHomeWorkView.m; path = "毕业设计/View/HomeWorkView/StudentHomeWorkView.m"; sourceTree = SOURCE_ROOT; };
 		3FE562E21CA68AC9008DAE69 /* StudentHomeWorkView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = StudentHomeWorkView.xib; path = "毕业设计/View/HomeWorkView/StudentHomeWorkView.xib"; sourceTree = SOURCE_ROOT; };
+		3FE562EA1CA7D2E9008DAE69 /* AnswerVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerVC.h; sourceTree = "<group>"; };
+		3FE562EB1CA7D2E9008DAE69 /* AnswerVC.m */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 5; lastKnownFileType = sourcecode.c.objc; path = AnswerVC.m; sourceTree = "<group>"; };
+		3FE563261CA8D195008DAE69 /* CommentCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommentCell.h; path = ../CommentCell.h; sourceTree = "<group>"; };
+		3FE563271CA8D195008DAE69 /* CommentCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CommentCell.m; path = ../CommentCell.m; sourceTree = "<group>"; };
+		3FE563281CA8D195008DAE69 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CommentCell.xib; path = ../CommentCell.xib; sourceTree = "<group>"; };
+		3FE5632B1CA8D4D1008DAE69 /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Comment.h; sourceTree = "<group>"; };
+		3FE5632C1CA8D4D1008DAE69 /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comment.m; sourceTree = "<group>"; };
+		3FE563311CA8E3BD008DAE69 /* SoloCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoloCell.h; sourceTree = "<group>"; };
+		3FE563321CA8E3BD008DAE69 /* SoloCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoloCell.m; sourceTree = "<group>"; };
+		3FE563331CA8E3BD008DAE69 /* SoloCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SoloCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -414,6 +430,12 @@
 		3F1C2A4F1CA3C968002CC5D0 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				3FE563261CA8D195008DAE69 /* CommentCell.h */,
+				3FE563271CA8D195008DAE69 /* CommentCell.m */,
+				3FE563281CA8D195008DAE69 /* CommentCell.xib */,
+				3FE563311CA8E3BD008DAE69 /* SoloCell.h */,
+				3FE563321CA8E3BD008DAE69 /* SoloCell.m */,
+				3FE563331CA8E3BD008DAE69 /* SoloCell.xib */,
 				3F1C2A501CA3C968002CC5D0 /* SDTimeLineCell.h */,
 				3F1C2A511CA3C968002CC5D0 /* SDTimeLineCell.m */,
 			);
@@ -452,6 +474,8 @@
 			children = (
 				3F1C2A601CA3D0B4002CC5D0 /* SDTimeLineCellModel.h */,
 				3F1C2A611CA3D0B4002CC5D0 /* SDTimeLineCellModel.m */,
+				3FE5632B1CA8D4D1008DAE69 /* Comment.h */,
+				3FE5632C1CA8D4D1008DAE69 /* Comment.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -649,6 +673,8 @@
 				3F721FED1CA2B01B00A9C99D /* TeacherLoginVC.h */,
 				3F721FEE1CA2B01B00A9C99D /* TeacherLoginVC.m */,
 				3F721FEF1CA2B01B00A9C99D /* TeacherLoginVC.xib */,
+				3FE562EA1CA7D2E9008DAE69 /* AnswerVC.h */,
+				3FE562EB1CA7D2E9008DAE69 /* AnswerVC.m */,
 			);
 			path = Discussion;
 			sourceTree = "<group>";
@@ -1052,6 +1078,7 @@
 				3FDD624C1CA0306A0022ABEA /* Assets.xcassets in Resources */,
 				3F7AA1481CA66F030078002A /* StudentSignDetailCell.xib in Resources */,
 				3FDD624A1CA0306A0022ABEA /* Main.storyboard in Resources */,
+				3FE5632A1CA8D195008DAE69 /* CommentCell.xib in Resources */,
 				3F73F6281CA1357B00A800AB /* 3.jpg in Resources */,
 				3F721FF21CA2B01B00A9C99D /* LoginVC.xib in Resources */,
 				3F76F4CB1CA27CE30007AD1C /* 扫描线@2x.png in Resources */,
@@ -1063,6 +1090,7 @@
 				3F1C2AD01CA3D17E002CC5D0 /* MLEmoji_Expression.plist in Resources */,
 				3F1C2AD11CA3D17E002CC5D0 /* MLEmoji_ExpressionImage.plist in Resources */,
 				3F1C2AEB1CA3DCD6002CC5D0 /* icon1.jpg in Resources */,
+				3FE563351CA8E3BD008DAE69 /* SoloCell.xib in Resources */,
 				3F721FF41CA2B01B00A9C99D /* LoginDVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1129,6 +1157,7 @@
 				3FE562DF1CA68A83008DAE69 /* HomeWorkDetailVC.m in Sources */,
 				3F1C2A661CA3D0C8002CC5D0 /* SDTimeLineCellCommentView.m in Sources */,
 				3F1C2AD41CA3D17E002CC5D0 /* NSMutableAttributedString+MLLabel.m in Sources */,
+				3FE563341CA8E3BD008DAE69 /* SoloCell.m in Sources */,
 				3F1C2A9A1CA3D166002CC5D0 /* MKAnnotationView+WebCache.m in Sources */,
 				3FE562E31CA68AC9008DAE69 /* StudentHomeWorkView.m in Sources */,
 				3F1C2AA81CA3D166002CC5D0 /* UIImageView+WebCache.m in Sources */,
@@ -1143,8 +1172,11 @@
 				3F7AA1471CA66F030078002A /* StudentSignDetailCell.m in Sources */,
 				3F1C2AD91CA3D17E002CC5D0 /* NSString+MLExpression.m in Sources */,
 				3F1C2ADF1CA3D17E002CC5D0 /* TTTAttributedLabel.m in Sources */,
+				3FE5632D1CA8D4D1008DAE69 /* Comment.m in Sources */,
 				3F7220091CA2B27F00A9C99D /* ChatVC.m in Sources */,
+				3FE562EC1CA7D2E9008DAE69 /* AnswerVC.m in Sources */,
 				3F1C2A621CA3D0B4002CC5D0 /* SDTimeLineCellModel.m in Sources */,
+				3FE563291CA8D195008DAE69 /* CommentCell.m in Sources */,
 				3F721FFD1CA2B0B800A9C99D /* DataManager.m in Sources */,
 				3F1C2AD31CA3D17E002CC5D0 /* NSAttributedString+MLLabel.m in Sources */,
 				3F1C2AD81CA3D17E002CC5D0 /* NSAttributedString+MLExpression.m in Sources */,
