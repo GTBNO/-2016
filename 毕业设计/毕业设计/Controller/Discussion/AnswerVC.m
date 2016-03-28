@@ -49,6 +49,20 @@
        }];
   
     
+     
+     //通知
+     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+     [center addObserver:self selector:@selector(reloadComment) name:@"comment" object:nil];
+     
+}
+
+-(void)reloadComment
+{
+     [[DataManager sharedDataManager] getAllAnswer:^{
+          UITableView *tableView = (UITableView *)self.tableView.tableFooterView;
+          [tableView reloadData];
+     }];
+    
 }
 
 -(UITableView *)footerView

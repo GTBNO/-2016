@@ -8,7 +8,7 @@
 
 
 #import "DataManager.h"
-
+//#import ""
 
 
 
@@ -293,7 +293,7 @@
 
 }
 
-
+//得到全部回复的方法
 -(void)getAllAnswer:(CommentBlock)commentBlock
 {
     
@@ -324,7 +324,7 @@
           for (BmobObject *object in array) {
                    
                     [self.commentArray addObject:object];
-              NSLog(@"%@",object);
+          
            }
                 
                 commentBlock();
@@ -341,11 +341,22 @@
     //同样要加关联的
     BmobUser *user = [BmobUser getCurrentUser];
     if (user) {
+        
+        //得到哪条问题
+        NSInteger which = [[NSUserDefaults standardUserDefaults] integerForKey:@"answer"];
+        BmobObject *object1 = self.dataArray[which];
+        
+    
+        
         BmobObject *object = [BmobObject objectWithClassName:@"Answer"];
+        
+        
+        
         [object setObject:[user objectForKey:@"name"] forKey:@"commenter"];
         [object setObject:commentee forKey:@"commentee"];
+        [object setObject:answer forKey:@"answer"];
         BmobRelation *relation = [[BmobRelation alloc] init];
-        [relation addObject:object];
+        [relation addObject:object1];
         [object addRelation:relation forKey:@"question"];
         
         
@@ -353,7 +364,11 @@
             if (isSuccessful) {
                 //创建成功后会返回objectId，updatedAt，createdAt等信息
                 //创建对象成功，打印对象值
+               
                 
+                //发送通知
+                NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+                [center postNotificationName:@"comment" object:self];
                 
                 NSLog(@"保存成功");
             } else if (error){
@@ -387,6 +402,92 @@
     
 }
 
+//刷新新的评论的方法
+-(void)refreshComment
+{
+    
+//    //查找新的评论然后加进数组
+//    
+//    //1记录最后一条的时间
+//    BmobObject *timeObject = self.commentArray[self.commentArray.count - 1];
+//    NSDate *date =  timeObject.createdAt;
+//    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+//    [formatter setDateFormat:@"yy-MM-dd HH:mm:ss"];
+//    NSString *time = [formatter stringFromDate:date];
+//    
+//    NSDictionary *condiction1 = @{@"createdAt":@{@"$gt":@{@"__type": @"Date", @"iso":time}}};
+//    
+//    NSArray *condictonArray = @[condiction1];
+//    
+//    //创建查找
+//    BmobQuery *query = [BmobQuery queryWithClassName:@"Answer"];
+//    [query addTheConstraintByAndOperationWithArray:condictonArray];
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+//        if (error) {
+//            NSLog(@"%@",error);
+//        } else if (array){
+//            
+//            for (BmobObject *object in array) {
+//                
+//                NSLog(@"%@",[object objectForKey:@"answer"]);
+//                
+//            }
+//            
+//       
+//        }
+//    }];
+
+    BmobUser *user = [BmobUser getCurrentUser];
+    if (user) {
+        
+        NSInteger number =[[NSUserDefaults standardUserDefaults] integerForKey:@"answer"];
+        BmobObject *object = self.dataArray[number];
+        
+        
+        
+        BmobQuery *inQuery = [BmobQuery queryWithClassName:@"Answer"];
+        NSString *class = [user objectForKey:@"className"];
+        NSString *className = [NSString stringWithFormat:@"%@Question",class];
+        
+        BmobQuery *bquery = [BmobQuery queryWithClassName:className];
+        
+        //要得到哪条问题
+        BmobObject *timeObject = self.commentArray[self.commentArray.count - 1];
+            NSDate *date =  timeObject.createdAt;
+            NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+            [formatter setDateFormat:@"yy-MM-dd HH:mm:ss"];
+            NSString *time = [formatter stringFromDate:date];
+        NSLog(@"%@",time);
+            NSDictionary *condiction1 = @{@"createdAt":@{@"$gt":@{@"__type": @"Date", @"iso":time}}};
+        
+        
+            NSArray *condictonArray = @[condiction1];
+        [bquery addTheConstraintByAndOperationWithArray:condictonArray];
+        
+        [bquery whereKey:@"question" equalTo:[object objectForKey:@"question"]];
+        [inQuery whereKey:@"question" matchesQuery:bquery];
+        [inQuery findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
+            if (error) {
+                NSLog(@"%@",error);
+            } else if (array){
+                
+                NSLog(@"suceessful");
+                for (BmobObject *object in array) {
+                    
+                    [self.commentArray addObject:object];
+                    NSLog(@"object");
+                }
+                
+              
+            }
+        }];
+        
+        
+    }
+
+    
+}
 
 -(NSMutableArray *)commentArray
 {

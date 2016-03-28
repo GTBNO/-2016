@@ -53,4 +53,7 @@ typedef void(^CommentBlock)();
 
 //删除评论的方法
 -(void)deleteComment:(NSInteger)which;
+
+//刷新新的评论的方法
+-(void)refreshComment;
 @end
