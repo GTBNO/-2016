@@ -13,6 +13,7 @@ typedef void(^RegistBlock)();
 typedef void(^ModelBlock)();
 typedef void(^ReBlock)();
 typedef void(^CommentBlock)();
+typedef void(^AllBlock)();
 @interface DataManager : NSObject
 
 @property (nonatomic,copy) RegistBlock registBlock;
@@ -20,7 +21,7 @@ typedef void(^CommentBlock)();
 @property (nonatomic,strong) NSMutableArray *dataArray;
 @property (nonatomic,strong) NSMutableArray *refreshArray;
 @property (nonatomic,strong) NSMutableArray *commentArray;
-
+@property (nonatomic,strong) NSMutableArray *allUserArray;
 //初始化方法
 +(DataManager *)sharedDataManager;
 
@@ -55,6 +56,6 @@ typedef void(^CommentBlock)();
 -(void)deleteComment:(NSInteger)which;
 
 //返回当前班和老师
--(NSMutableArray *)returnAllUser;
+-(void)returnAllUser:(AllBlock)allBlock;
 
 @end

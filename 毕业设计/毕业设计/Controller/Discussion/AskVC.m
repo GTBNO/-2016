@@ -62,6 +62,7 @@
     {
         [[DataManager sharedDataManager] commentQuestion:self.textView.text];
         [self.navigationController popViewControllerAnimated:YES];
+        //怎么让它同步更新
     }else
     {
         NSInteger row = [[NSUserDefaults standardUserDefaults] integerForKey:@"row"];

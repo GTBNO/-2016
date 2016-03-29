@@ -119,7 +119,7 @@
         [bmobObject setObject:className forKey:@"className"];
         
       
-        
+//        self.commentArray 
       
         
         //异步保存到服务器
@@ -218,7 +218,7 @@
                         
                     }else{
                         [self.refreshArray addObject:object];
-                        [self.dataArray addObject:object];
+                        [self.dataArray insertObject:object atIndex:0];
                     }
                     
                 }
@@ -276,7 +276,9 @@
             if (isSuccessful) {
                 //创建成功后会返回objectId，updatedAt，createdAt等信息
                 //创建对象成功，打印对象值
-      
+                NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+                [center postNotificationName:@"comment" object:self];
+                
                 NSLog(@"保存成功");
             } else if (error){
                 //发生错误后的动作
@@ -304,7 +306,7 @@
         NSInteger number =[[NSUserDefaults standardUserDefaults] integerForKey:@"answer"];
         BmobObject *object = self.dataArray[number];
 
-    
+        
         
           BmobQuery *inQuery = [BmobQuery queryWithClassName:@"Answer"];
         NSString *class = [user objectForKey:@"className"];
@@ -326,7 +328,7 @@
                     [self.commentArray addObject:object];
           
            }
-                
+                NSLog(@"%ld",array.count);
                 commentBlock();
             }
         }];
@@ -403,18 +405,20 @@
 }
 
 //返回当前班的所有学生
--(NSMutableArray *)returnAllUser
+-(void)returnAllUser:(AllBlock)allBlock
 {
     BmobUser *user = [BmobUser getCurrentUser];
-    NSMutableArray *mutableArray = [[NSMutableArray alloc] init];
+
     
         NSString *className = [user objectForKey:@"className"];
+    NSLog(@"%@",className);
         BmobQuery *query = [BmobQuery queryWithClassName:className];
         [query findObjectsInBackgroundWithBlock:^(NSArray *array, NSError *error) {
             if (error) {
                 NSLog(@"%@",error);
             } else if (array){
-                [mutableArray addObjectsFromArray:array];
+                
+                [self.allUserArray addObjectsFromArray:array];
              
                 
                
@@ -427,21 +431,28 @@
         if (error) {
             NSLog(@"%@",error);
         } else if (array){
-            
+
             for (BmobObject *object in array) {
-                [mutableArray addObject:object];
+                [self.allUserArray addObject:object];
             }
             
-            
+            allBlock();
         }
     }];
 
 
-    return mutableArray;
+
     
  
 }
 
+-(NSMutableArray *)allUserArray
+{
+    if (_allUserArray == nil) {
+        _allUserArray = [[NSMutableArray alloc] init];
+    }
+    return _allUserArray;
+}
 
 -(NSMutableArray *)commentArray
 {

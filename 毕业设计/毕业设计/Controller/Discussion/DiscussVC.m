@@ -127,7 +127,7 @@
 //    self.automaticallyAdjustsScrollViewInsets = YES;
 //    
     self.edgesForExtendedLayout = UIRectEdgeNone;
-   
+
  
     
     self.title = @"有问必答";
@@ -325,7 +325,7 @@
         
         [[NSUserDefaults standardUserDefaults] setInteger:indexPath.row forKey:@"answer"];
         [[NSUserDefaults standardUserDefaults] setObject:@"comment" forKey:@"which"];
-        
+     
         AskVC *askVC = [[AskVC alloc] init];
         [self.navigationController pushViewController:askVC animated:YES];
     

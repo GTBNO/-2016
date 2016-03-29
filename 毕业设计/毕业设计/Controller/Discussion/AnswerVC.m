@@ -58,9 +58,14 @@
 
 -(void)reloadComment
 {
+     [self.commentArray removeAllObjects];
+     NSLog(@"第一次%ld",self.commentArray.count);
      [[DataManager sharedDataManager] getAllAnswer:^{
+          self.commentArray = [DataManager sharedDataManager].commentArray;
+               NSLog(@"第二次%ld",self.commentArray.count);
           UITableView *tableView = (UITableView *)self.tableView.tableFooterView;
           [tableView reloadData];
+          
      }];
     
 }
@@ -87,12 +92,19 @@
      return _commentArray;
 }
 
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+     return 1;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
      if (tableView == self.tableView) {
             return 1;
      }else
      {
+          
           return self.commentArray.count;
      }
   
@@ -108,7 +120,7 @@
                cell = [[SDTimeLineCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"reusepool"];
           }
           cell.block = ^(){
-            
+             [[NSUserDefaults standardUserDefaults] setObject:@"comment" forKey:@"which"];
                AskVC *askVC = [[AskVC alloc] init];
                [self.navigationController pushViewController:askVC animated:YES];
                
@@ -127,8 +139,8 @@
      }else
      {
           BmobObject *object = self.commentArray[indexPath.row];
-          
-          if ([[object objectForKey:@"commenter"] isEqualToString:[object objectForKey:@"commentee"]]) {
+          NSLog(@"第三次%ld",self.commentArray.count);
+          if ([[object objectForKey:@"commenter"] isEqualToString:[object objectForKey:@"commentee"]] ) {
                 [tableView registerNib:[UINib nibWithNibName:@"SoloCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"aaa"];
                SoloCell *cell = [tableView dequeueReusableCellWithIdentifier:@"aaa" forIndexPath:indexPath];
                cell.commenterLabel.text = [object objectForKey:@"commenter"];
@@ -171,10 +183,11 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
      if (tableView != self.tableView) {
+      
           BmobObject *object = [DataManager sharedDataManager].commentArray[indexPath.row];
           BmobUser *user = [BmobUser getCurrentUser];
           if ([[object objectForKey:@"commenter"] isEqualToString:[user objectForKey:@"name"]]) {
-               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"提示" message:@"删除" preferredStyle:UIAlertControllerStyleAlert];
+               UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"删除我的评论" preferredStyle: UIAlertControllerStyleAlert];
                UIAlertAction *action = [UIAlertAction actionWithTitle:@"确认" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                     //删除评论
                     [[DataManager sharedDataManager] deleteComment:indexPath.row];
